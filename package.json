@@ -1,0 +1,29 @@
+{
+  "name": "qiwi-rest",
+  "version": "0.0.1",
+  "description": "qiwi payment rest api lib ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artsoroka/qiwi-rest.git"
+  },
+  "keywords": [
+    "qiwi",
+    "api",
+    "rest"
+  ],
+  "author": "Artem Soroka <art.soroka@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artsoroka/qiwi-rest/issues"
+  },
+  "homepage": "https://github.com/artsoroka/qiwi-rest#readme",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "moment-timezone": "^0.5.1",
+    "request": "^2.69.0"
+  }
+}
