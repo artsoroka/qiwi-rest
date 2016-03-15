@@ -3,6 +3,8 @@ var date    = require('./lib/date');
 var extend  = require('util')._extend;
 var Promise = require('bluebird'); 
 
+var BASE_URL = 'https://api.qiwi.com/api/v2'; 
+
 var base64 = function(username, password){
     return new Buffer([username, password].join(':')).toString('base64'); 
 }; 
@@ -48,7 +50,7 @@ Qiwi.prototype.createInvoice = function(data){
     
     return this._makeRequest({
         method: 'PUT', 
-        uri: 'https://api.qiwi.com/api/v2/prv/' + this.SHOP_ID + '/bills/' + data.id, 
+        uri: [BASE_URL, 'prv', this.SHOP_ID, 'bills', data.id].joint('/'), 
         form: data
     }); 
     
