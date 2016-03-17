@@ -14,9 +14,10 @@ var base64 = function(username, password){
 function Qiwi(){}  
 
 Qiwi.prototype.client = function(config){
-    this.SHOP_ID  = config.shopId  || null; 
-    this.APP_ID   = config.appId   || null;
-    this.API_PASS = config.apiPass || null; 
+    this.SHOP_ID   = config.shopId   || null; 
+    this.SHOP_NAME = config.shopName || null; 
+    this.APP_ID    = config.appId    || null;
+    this.API_PASS  = config.apiPass  || null; 
     
     return this; 
 }; 
@@ -29,7 +30,8 @@ Qiwi.prototype._makeRequest = function(params){
     
     extend(params, {headers: headers}); 
     extend(params.form, {
-        lifetime: date(2, 'h') 
+        lifetime: date(2, 'h'), 
+        prv_name: this.SHOP_NAME 
     }); 
 
     return new Promise(function(resolve, reject){
@@ -50,7 +52,7 @@ Qiwi.prototype.createInvoice = function(data){
     
     return this._makeRequest({
         method: 'PUT', 
-        uri: [BASE_URL, 'prv', this.SHOP_ID, 'bills', data.id].joint('/'), 
+        uri: [BASE_URL, 'prv', this.SHOP_ID, 'bills', data.id].join('/'), 
         form: data
     }); 
     
