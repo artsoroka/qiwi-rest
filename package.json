@@ -4,7 +4,8 @@
   "description": "qiwi payment rest api lib ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "update:currency": "node tasks/update_currency_codes"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,11 @@
   "homepage": "https://github.com/artsoroka/qiwi-rest#readme",
   "dependencies": {
     "bluebird": "^3.3.4",
+    "lodash": "^4.11.1",
     "moment-timezone": "^0.5.1",
     "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "xml2js": "^0.4.16"
   }
 }
